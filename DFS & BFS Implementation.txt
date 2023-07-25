@@ -1,0 +1,91 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+ 
+#define n 4
+
+int a[n][n],vis[n],stack[50],queue[50];
+int top=-1;
+int rear=-1;
+int front=-1;
+
+void DFS(int v)
+{
+    vis[v]=1;
+    printf("%d",v);
+    stack[++top]=v;
+    for(int i=0;i<n;i++)
+    {
+        if(a[v][i]==1 && !vis[i])
+        {
+            DFS(i);
+        }
+    }
+    
+    while(top!=-1)
+    {
+    int e=stack[top];
+    int f=0;
+    for(int i=0;i<n;i++)
+    {
+        if(a[e][i]==1 && !vis[i])
+        {
+            DFS(i);
+            f=1;
+        }
+    }
+    if(f==0)
+    {
+        top--;
+    }
+    
+}
+}
+
+void BFS(int v)
+{
+    vis[v]=1;
+    printf("%d",v);
+    for(int i=0;i<n;i++)
+    {
+        if(a[v][i]==1 && !vis[i])
+        {
+            queue[++rear]=i;
+            vis[i]=1;
+        }
+    }
+    if(front < rear)
+    {
+        BFS(queue[++front]);
+    }
+}
+
+void main()
+{
+    int v;
+    printf("Enter matrix:\n");
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    
+    for(int i=0;i<n;i++)
+    {
+        vis[i]=0;
+    }
+    
+    printf("DFS traversal is:\n");
+    DFS(v);
+    printf("\n");
+    for(int i=0;i<n;i++)
+    {
+        vis[i]=0;
+    }
+    printf("BFS traversal is:\n");
+    queue[++rear]=v;
+    BFS(queue[++front]);
+
+}
+
