@@ -1,0 +1,93 @@
+#include <stdio.h>
+//define n 5
+
+void BasedonProfit(float p[], float w[], float x[], float cap)
+{
+   
+    int temp;
+    int n;
+   
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(p[i] < p[i+1])
+            {
+                temp = p[i];
+                p[i] = p[i+1];
+                p[i+1] = temp;
+               
+                temp = w[i];
+                w[i] = w[i+1];
+                w[i+1] = temp;
+            }
+        }
+    }
+   
+    float TW ;
+    float TP=0;
+   
+    for(int i=0; i<n; i++){
+        if(TW+w[i] <= cap)
+        {
+            TW = TW+w[i];
+            TP=TP+p[i];
+            x[i]=p[i];
+        }
+       
+        else
+        {
+            float q = (cap-TW)/w[i];
+             TP = TP + q*p[i];
+            TW =TW+ q*w[i];
+            x[i] = p[i]*q;
+            break;
+        }
+    }
+     for(int i=0; i<n; i++)
+     {
+         TP = TP + p[i]*x[i];
+     }
+     
+     printf("Total profit is %0.2f\n" , TP);
+     printf("Weight capacity is %0.2f\n",TW);
+   
+     for(int i=0;i<5;i++){
+        printf("%0.2f ", x[i]);
+    }
+   
+    for(int i=0;i<n;i++){
+        printf("%f",p[i]);
+    }
+   
+    for(int i=0;i<n;i++){
+        printf("%f",w[i]);
+    }
+   
+}
+
+
+
+int main()
+{
+    int n;
+    int cap;
+    float p[n],w[n];
+    float x[n];
+   
+    printf("Enter number of elements: \n");
+    scanf("%d",&n);
+   
+    printf("Enter the product elements: \n");
+    for(int i=0;i<n;i++){
+            scanf("%f",&p[i]);
+    }
+    printf("Enter the weight elements: \n");
+    for(int i=0;i<n;i++){
+            scanf("%f",&w[i]);
+    }
+    printf("Enter the capacity:\n");
+    scanf("%d",&cap);
+   
+    BasedonProfit(p,w,x,cap);
+   
+    return 0;
+}
