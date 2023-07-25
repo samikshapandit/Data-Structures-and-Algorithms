@@ -1,0 +1,175 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+// Structure for the expression tree node
+struct TreeNode {
+    char data;
+    struct TreeNode* left;
+    struct TreeNode* right;
+};
+
+// Function to create a new expression tree node
+struct TreeNode* createNode(char data) {
+    struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    newNode->data = data;
+    newNode->left = newNode->right = NULL;
+    return newNode;
+}
+
+// Function to check if the given character is an operator
+int isOperator(char ch) {
+    return (ch == '+' || ch == '-' || ch == '*' || ch == '/');
+}
+
+// Function to construct an expression tree from a postfix expression
+struct TreeNode* constructExpressionTreeFromPostfix(char postfix[]) {
+    struct TreeNode* stack[100];
+    int top = -1;
+    struct TreeNode *t, *t1, *t2;
+
+    for (int i = 0; postfix[i] != '\0'; i++) {
+        t = createNode(postfix[i]);
+
+        if (isalnum(postfix[i])) {
+            stack[++top] = t;
+        } else {
+            t1 = stack[top--];
+            t2 = stack[top--];
+
+            t->right = t1;
+            t->left = t2;
+
+            stack[++top] = t;
+        }
+    }
+    return stack[top];
+}
+
+// Function to construct an expression tree from a prefix expression
+struct TreeNode* constructExpressionTreeFromPrefix(char prefix[], int* index) {
+    if (prefix[*index] == '\0')
+        return NULL;
+
+    struct TreeNode* newNode = createNode(prefix[*index]);
+    (*index)++;
+
+    if (isOperator(prefix[*index - 1])) {
+        newNode->left = constructExpressionTreeFromPrefix(prefix, index);
+        newNode->right = constructExpressionTreeFromPrefix(prefix, index);
+    }
+
+    return newNode;
+}
+
+// Recursive In-order traversal of the expression tree
+void recursiveInOrder(struct TreeNode* root) {
+    if (root != NULL) {
+        recursiveInOrder(root->left);
+        printf("%c ", root->data);
+        recursiveInOrder(root->right);
+    }
+}
+
+// Recursive Pre-order traversal of the expression tree
+void recursivePreOrder(struct TreeNode* root) {
+    if (root != NULL) {
+        printf("%c ", root->data);
+        recursivePreOrder(root->left);
+        recursivePreOrder(root->right);
+    }
+}
+
+// Recursive Post-order traversal of the expression tree
+void recursivePostOrder(struct TreeNode* root) {
+    if (root != NULL) {
+        recursivePostOrder(root->left);
+        recursivePostOrder(root->right);
+        printf("%c ", root->data);
+    }
+}
+
+// Non-recursive In-order traversal of the expression tree
+void nonRecursiveInOrder(struct TreeNode* root) {
+    struct TreeNode* stack[100];
+    int top = -1;
+    struct TreeNode* current = root;
+
+    while (current != NULL || top != -1) {
+        while (current != NULL) {
+            stack[++top] = current;
+            current = current->left;
+        }
+
+        current = stack[top--];
+        printf("%c ", current->data);
+        current = current->right;
+    }
+}
+
+// Non-recursive Pre-order traversal of the expression tree
+void nonRecursivePreOrder(struct TreeNode* root) {
+    struct TreeNode* stack[100];
+    int top = -1;
+    stack[++top] = root;
+
+    while (top != -1) {
+        struct TreeNode* current = stack[top--];
+        printf("%c ", current->data);
+
+        if (current->right != NULL)
+            stack[++top] = current->right;
+
+        if (current->left != NULL)
+            stack[++top] = current->left;
+    }
+}
+
+// Non-recursive Post-order traversal of the expression tree
+void nonRecursivePostOrder(struct TreeNode* root) {
+    struct TreeNode* stack1[100];
+    struct TreeNode* stack2[100];
+    int top1 = -1;
+    int top2 = -1;
+
+    stack1[++top1] = root;
+
+    while (top1 != -1) {
+        struct TreeNode* current = stack1[top1--];
+        stack2[++top2] = current;
+
+        if (current->left != NULL)
+            stack1[++top1] = current->left;
+
+        if (current->right != NULL)
+            stack1[++top1] = current->right;
+    }
+
+    while (top2 != -1) {
+        struct TreeNode* current = stack2[top2--];
+        printf("%c ", current->data);
+    }
+}
+
+// Driver program
+int main() {
+    // Example usage
+    char postfix[] = "AB+CD-*";
+    char prefix[] = "*+AB-CD";
+
+    struct TreeNode* postfixRoot = constructExpressionTreeFromPostfix(postfix);
+    struct TreeNode* prefixRoot;
+    int index = 0;
+    prefixRoot = constructExpressionTreeFromPrefix(prefix, &index);
+
+    printf("Postfix Expression Tree (In-order traversal): ");
+    recursiveInOrder(postfixRoot);
+    printf("\n");
+
+    printf("Prefix Expression Tree (In-order traversal): ");
+    recursiveInOrder(prefixRoot);
+    printf("\n");
+
+    return 0;
+}
