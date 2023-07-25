@@ -1,0 +1,85 @@
+#include <stdio.h>
+int size = 0;
+
+void insert(int array[], int d)
+{
+  if (size == 0)
+  {
+    array[0] = d;
+    size += 1;
+  }
+  else
+  {
+    array[size] = d;
+    size += 1;
+    for (int i = size / 2 - 1; i >= 0; i--)
+    {
+      heapify(array, size, i);
+    }
+  }
+}
+
+void swap(int *a, int *b)
+{
+  int temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+void heapify(int array[], int size, int i)
+{
+    int max = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
+    if (l < size && array[l] > array[max])
+      max = l;
+    if (r < size && array[r] > array[max])
+      max = r;
+    if (max!= i)
+    {
+      swap(&array[max], &array[i]);
+      heapify(array, size, max);
+    }
+ 
+}
+
+void heap_sort(int array[],int size)
+{
+    for(int i=size/2 -1 ; i>=0; i--)
+    {
+        heapify(array,size,i);
+    }
+   
+    for(int i=size-1; i>=0; i--)
+    {
+        swap(&array[0],&array[i]);
+        heapify(array,i,0);
+    }
+}
+
+void display(int array[], int size)
+{
+  for (int i = 0; i < size; ++i)
+    printf("%d ", array[i]);
+  printf("\n");
+}
+
+int main()
+{
+  int array[10];
+
+  insert(array, 2);
+  insert(array, 4);
+  insert(array, 9);
+  insert(array, 1);
+  insert(array, 12);
+  insert(array, 5);
+
+  printf("Max-Heap array is: ");
+  display(array, size);
+ 
+  heap_sort(array,size);
+  printf("Sorted array is: ");
+  display(array, size);
+
+}
