@@ -1,0 +1,84 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+void mergeS(int[],int, int);
+void merge(int[],int,int,int);
+
+void mergeS(int a[],int b, int e)
+{
+    if(b<e)
+    {
+        int mid=(b+e)/2;
+        mergeS(a,b,mid);
+        mergeS(a,mid+1,e);
+        merge(a,b,mid,e);
+    }
+}
+
+void merge(int a[],int b, int mid, int e)
+{
+    //int i,j,k;
+    int n1=mid-b+1;
+    int n2=e-mid;
+    int left[n1],right[n2];
+    for(int i=0;i<n1;i++)
+    {
+        left[i]=a[b+i];
+    }
+    for(int j=0;j<n2;j++)
+    {
+        right[j]=a[mid+1+j];
+    }
+    int i=0;
+    int j=0;
+    int k=b;
+    while(i<n1 && j<n2)
+    {
+        if(left[i]<=right[j])
+        {
+            a[k]=left[i];
+            i++;
+            k++;
+        }
+        else
+        {
+            a[k]=right[j];
+            j++;
+            k++;
+        }
+    }
+    while(i<n1)
+    {
+        a[k]=left[i];
+            i++;
+            k++;
+    }
+    while(j<n2)
+    {
+       a[k]=right[j];
+            j++;
+            k++; 
+    }
+}
+
+void main()
+{
+    int n,b=0,e;
+    printf("Enter array size:\n");
+    scanf("%d",&n);
+    int a[n];
+    e=n-1;
+    printf("Enter the elements:\n");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    
+    mergeS(a,b,e);
+    
+    printf("Sorted array is:\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d\t\t",a[i]);
+    }
+}
