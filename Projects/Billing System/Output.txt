@@ -1,0 +1,373 @@
+(base) PS C:\Users\Ashwajeet Pandit\Desktop\WebDev> cd "c:\Users\Admin\Desktop\CppTutorials\" ; if ($?) { g++ market.cpp -o market } ; if ($?) { .\market }
+Are you shopping for the first time? (yes/no): yes
+Enter Customer Name: Samiksha
+Enter Contact Number: 7845123565
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1
+        Enter Item Name: Poha
+        Enter Rate Of Item: 80
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1
+        Enter Item Name: Sugar
+        Enter Rate Of Item: 55
+        Enter Quantity Of Item: 2
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1
+        Enter Item Name: Soap
+        Enter Rate Of Item: 84
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1
+        Enter Item Name: Oil
+        Enter Rate Of Item: 210
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 2
+
+
+                ***** Super Market Billing System *****
+
+Customer Name: Samiksha
+Contact Number: 7845123565
+Item Name           Rate      Quantity  Amount
+oha                 80        1         80
+ugar                55        2         110
+oap                 84        1         84
+il                  210       1         210
+
+                Total Number of Items: 4
+
+                Total Bill: 387
+
+                Thanks For Shopping!
+
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 3
+
+        Modify Bill Menu:
+        1. Add Item.
+        2. Remove Item.
+        3. Exit.
+        Enter Choice: 1
+        Enter Item Name: Chocolate
+        Enter Rate Of Item: 140
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 3
+
+        Modify Bill Menu:
+        1. Add Item.
+        2. Remove Item.
+        3. Exit.
+        Enter Choice: 1
+        Enter Item Name: Corn
+        Enter Rate Of Item: 20
+        Enter Quantity Of Item: 3
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 2
+
+
+                ***** Super Market Billing System *****
+
+Customer Name: Samiksha
+Contact Number: 7845123565
+Item Name           Rate      Quantity  Amount
+oha                 80        1         80
+ugar                55        2         110
+oap                 84        1         84        
+il                  210       1         210
+hocolate            140       1         140
+orn                 20        3         60
+
+                Total Number of Items: 6
+
+                Total Bill: 547
+
+                Thanks For Shopping!
+
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 3
+
+        Modify Bill Menu:
+        1. Add Item.
+        2. Remove Item.
+        3. Exit.
+        Enter Choice: 2
+        Enter Item Name to remove: corn
+        Item Removed Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 2
+
+
+                ***** Super Market Billing System *****
+
+Customer Name: Samiksha
+Contact Number: 7845123565
+Item Name           Rate      Quantity  Amount
+oha                 80        1         80
+ugar                55        2         110
+oap                 84        1         84
+il                  210       1         210
+hocolate            140       1         140
+orn                 20        3         60
+
+                Total Number of Items: 6
+
+                Total Bill: 547
+
+                Thanks For Shopping!
+
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 4
+        Good Luck!
+Do you want to continue Billing? (yes/no): no
+
+Are you shopping for the first time? (yes/no): no
+Enter Customer Name: Pooja
+Enter Contact Number: 7545126535
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1
+        Enter Item Name: Maggie
+        Enter Rate Of Item: 14
+        Enter Quantity Of Item: 5
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1       
+        Enter Item Name: Biscuits
+        Enter Rate Of Item: 30
+        Enter Quantity Of Item: 2
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1
+        Enter Item Name: Handwash
+        Enter Rate Of Item: 150
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1
+        Enter Item Name: Floor Cleaner
+        Enter Rate Of Item: 140
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 2
+
+
+                ***** Super Market Billing System *****
+
+Customer Name: Pooja
+Contact Number: 7545126535
+Item Name           Rate      Quantity  Amount
+aggie               14        5         70
+iscuits             30        2         60
+andwash             150       1         150
+loor Cleaner        140       1         140
+
+                Total Number of Items: 4
+
+                Total Bill: 377
+
+                Thanks For Shopping!
+
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 3
+
+        Modify Bill Menu:
+        1. Add Item.
+        2. Remove Item.
+        3. Exit.
+        Enter Choice: 1
+        Enter Item Name: Jaggery
+        Enter Rate Of Item: 200
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 3
+
+        Modify Bill Menu:
+        1. Add Item.
+        2. Remove Item.
+        3. Exit.
+        Enter Choice: 1
+        Enter Item Name: Chips
+        Enter Rate Of Item: 40
+        Enter Quantity Of Item: 2
+        Item Added Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 2
+
+
+                ***** Super Market Billing System *****
+
+Customer Name: Pooja
+Contact Number: 7545126535
+Item Name           Rate      Quantity  Amount
+aggie               14        5         70
+iscuits             30        2         60
+andwash             150       1         150
+loor Cleaner        140       1         140
+aggery              200       1         200
+hips                40        2         80
+
+                Total Number of Items: 6
+
+                Total Bill: 629
+
+                Thanks For Shopping!
+
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 3
+
+        Modify Bill Menu:
+        1. Add Item.
+        2. Remove Item.
+        3. Exit.
+        Enter Choice: 2
+        Enter Item Name to remove: Chips
+        Item Removed Successfully
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 2
+
+
+                ***** Super Market Billing System *****
+
+Customer Name: Pooja
+Contact Number: 7545126535
+Item Name           Rate      Quantity  Amount
+aggie               14        5         70
+iscuits             30        2         60
+andwash             150       1         150
+loor Cleaner        140       1         140
+aggery              200       1         200
+hips                40        2         80
+
+                Total Number of Items: 6
+
+                Total Bill: 629
+
+                Thanks For Shopping!
+
+        Welcome To Super Market Billing System
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 4
+        Good Luck!
+Do you want to continue Billing? (yes/no): yes
+Are you shopping for the first time? (yes/no): yes
+Enter Customer Name: XYZ
+Enter Contact Number: 
