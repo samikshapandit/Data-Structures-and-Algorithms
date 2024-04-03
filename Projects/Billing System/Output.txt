@@ -1,8 +1,13 @@
-(base) PS C:\Users\Ashwajeet Pandit\Desktop\WebDev> cd "c:\Users\Admin\Desktop\CppTutorials\" ; if ($?) { g++ market.cpp -o market } ; if ($?) { .\market }
+(base) PS C:\Users\Admin\Desktop\CppTutorials> cd "c:\Users\Admin\Desktop\CppTutorials\" ; if ($?) { g++ market.cpp -o market } ; if ($?) { .\market }
+Are you a Billing Manager or Sales Manager? (billing/sales): billing
+Enter Billing Manager Name: Samiksha
+Enter Billing Manager ID: 1
+Billing Manager Name: Samiksha
+Billing Manager ID: 1
 Are you shopping for the first time? (yes/no): yes
-Enter Customer Name: Samiksha
-Enter Contact Number: 7845123565
-        Welcome To Super Market Billing System
+Enter Customer Name: Utkarsha
+Enter Contact Number: 8451247652
+        Welcome To Sammy's Super Market 
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -13,7 +18,18 @@ Enter Contact Number: 7845123565
         Enter Rate Of Item: 80
         Enter Quantity Of Item: 1
         Item Added Successfully
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market 
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1
+        Enter Item Name: Pasta
+        Enter Rate Of Item: 40
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Sammy's Super Market 
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -24,7 +40,18 @@ Enter Contact Number: 7845123565
         Enter Rate Of Item: 55
         Enter Quantity Of Item: 2
         Item Added Successfully
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1
+        Enter Item Name: Rice
+        Enter Rate Of Item: 85
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Sammy's Super Market
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -35,18 +62,7 @@ Enter Contact Number: 7845123565
         Enter Rate Of Item: 84
         Enter Quantity Of Item: 1
         Item Added Successfully
-        Welcome To Super Market Billing System
-        **************************************
-                1. Add Item.
-                2. Print Bill.
-                3. Modify Bill.
-                4. Exit.
-                Enter Choice: 1
-        Enter Item Name: Oil
-        Enter Rate Of Item: 210
-        Enter Quantity Of Item: 1
-        Item Added Successfully
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -55,84 +71,45 @@ Enter Contact Number: 7845123565
                 Enter Choice: 2
 
 
-                ***** Super Market Billing System *****
+                ***** Sammy's Super Market *****
 
-Customer Name: Samiksha
-Contact Number: 7845123565
+                 ***Invoice***
+
+
+Customer Name: Utkarsha
+Contact Number:
+8451247652
 Item Name           Rate      Quantity  Amount
 oha                 80        1         80
+asta                40        1         40
 ugar                55        2         110
-oap                 84        1         84
-il                  210       1         210
-
-                Total Number of Items: 4
-
-                Total Bill: 387
-
-                Thanks For Shopping!
-
-        Welcome To Super Market Billing System
-        **************************************
-                1. Add Item.
-                2. Print Bill.
-                3. Modify Bill.
-                4. Exit.
-                Enter Choice: 3
-
-        Modify Bill Menu:
-        1. Add Item.
-        2. Remove Item.
-        3. Exit.
-        Enter Choice: 1
-        Enter Item Name: Chocolate
-        Enter Rate Of Item: 140
-        Enter Quantity Of Item: 1
-        Item Added Successfully
-        Welcome To Super Market Billing System
-        **************************************
-                1. Add Item.
-                2. Print Bill.
-                3. Modify Bill.
-                4. Exit.
-                Enter Choice: 3
-
-        Modify Bill Menu:
-        1. Add Item.
-        2. Remove Item.
-        3. Exit.
-        Enter Choice: 1
-        Enter Item Name: Corn
-        Enter Rate Of Item: 20
-        Enter Quantity Of Item: 3
-        Item Added Successfully
-        Welcome To Super Market Billing System
-        **************************************
-                1. Add Item.
-                2. Print Bill.
-                3. Modify Bill.
-                4. Exit.
-                Enter Choice: 2
-
-
-                ***** Super Market Billing System *****
-
-Customer Name: Samiksha
-Contact Number: 7845123565
-Item Name           Rate      Quantity  Amount
-oha                 80        1         80
-ugar                55        2         110
+ice                 85        1         85
 oap                 84        1         84        
-il                  210       1         210
-hocolate            140       1         140
-orn                 20        3         60
 
-                Total Number of Items: 6
+                Total Number of Items: 5
 
-                Total Bill: 547
+                Total Bill: 319
 
                 Thanks For Shopping!
 
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 3
+
+        Modify Bill Menu:
+        1. Add Item.
+        2. Remove Item.
+        3. Exit.
+        Enter Choice: 1
+        Enter Item Name: Almonds
+        Enter Rate Of Item: 120
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Sammy's Super Market
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -145,9 +122,9 @@ orn                 20        3         60
         2. Remove Item.
         3. Exit.
         Enter Choice: 2
-        Enter Item Name to remove: corn
+        Enter Item Name to remove: Pasta
         Item Removed Successfully
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -156,25 +133,28 @@ orn                 20        3         60
                 Enter Choice: 2
 
 
-                ***** Super Market Billing System *****
+                ***** Sammy's Super Market *****
 
-Customer Name: Samiksha
-Contact Number: 7845123565
+                 ***Invoice***
+
+
+Customer Name: Utkarsha
+Contact Number:
+8451247652
 Item Name           Rate      Quantity  Amount
 oha                 80        1         80
 ugar                55        2         110
+ice                 85        1         85
 oap                 84        1         84
-il                  210       1         210
-hocolate            140       1         140
-orn                 20        3         60
+lmonds              120       1         120
 
-                Total Number of Items: 6
+                Total Number of Items: 5
 
-                Total Bill: 547
+                Total Bill: 383
 
                 Thanks For Shopping!
 
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -182,23 +162,22 @@ orn                 20        3         60
                 4. Exit.
                 Enter Choice: 4
         Good Luck!
-Do you want to continue Billing? (yes/no): no
-
+Do you want to continue Billing? (yes/no): yes
 Are you shopping for the first time? (yes/no): no
-Enter Customer Name: Pooja
-Enter Contact Number: 7545126535
-        Welcome To Super Market Billing System
+Enter Customer Name: Akanksha
+Enter Contact Number: 8645721212
+        Welcome To Sammy's Super Market 
         **************************************
                 1. Add Item.
                 2. Print Bill.
                 3. Modify Bill.
                 4. Exit.
                 Enter Choice: 1
-        Enter Item Name: Maggie
-        Enter Rate Of Item: 14
-        Enter Quantity Of Item: 5
+        Enter Item Name: Chips
+        Enter Rate Of Item: 40
+        Enter Quantity Of Item: 2
         Item Added Successfully
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -209,88 +188,18 @@ Enter Contact Number: 7545126535
         Enter Rate Of Item: 30
         Enter Quantity Of Item: 2
         Item Added Successfully
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market
         **************************************
                 1. Add Item.
                 2. Print Bill.
                 3. Modify Bill.
                 4. Exit.
                 Enter Choice: 1
-        Enter Item Name: Handwash
-        Enter Rate Of Item: 150
-        Enter Quantity Of Item: 1
-        Item Added Successfully
-        Welcome To Super Market Billing System
-        **************************************
-                1. Add Item.
-                2. Print Bill.
-                3. Modify Bill.
-                4. Exit.
-                Enter Choice: 1
-        Enter Item Name: Floor Cleaner
-        Enter Rate Of Item: 140
-        Enter Quantity Of Item: 1
-        Item Added Successfully
-        Welcome To Super Market Billing System
-        **************************************
-                1. Add Item.
-                2. Print Bill.
-                3. Modify Bill.
-                4. Exit.
-                Enter Choice: 2
-
-
-                ***** Super Market Billing System *****
-
-Customer Name: Pooja
-Contact Number: 7545126535
-Item Name           Rate      Quantity  Amount
-aggie               14        5         70
-iscuits             30        2         60
-andwash             150       1         150
-loor Cleaner        140       1         140
-
-                Total Number of Items: 4
-
-                Total Bill: 377
-
-                Thanks For Shopping!
-
-        Welcome To Super Market Billing System
-        **************************************
-                1. Add Item.
-                2. Print Bill.
-                3. Modify Bill.
-                4. Exit.
-                Enter Choice: 3
-
-        Modify Bill Menu:
-        1. Add Item.
-        2. Remove Item.
-        3. Exit.
-        Enter Choice: 1
-        Enter Item Name: Jaggery
-        Enter Rate Of Item: 200
-        Enter Quantity Of Item: 1
-        Item Added Successfully
-        Welcome To Super Market Billing System
-        **************************************
-                1. Add Item.
-                2. Print Bill.
-                3. Modify Bill.
-                4. Exit.
-                Enter Choice: 3
-
-        Modify Bill Menu:
-        1. Add Item.
-        2. Remove Item.
-        3. Exit.
-        Enter Choice: 1
-        Enter Item Name: Chips
+        Enter Item Name: Coffee
         Enter Rate Of Item: 40
-        Enter Quantity Of Item: 2
+        Enter Quantity Of Item: 1
         Item Added Successfully
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -299,25 +208,43 @@ loor Cleaner        140       1         140
                 Enter Choice: 2
 
 
-                ***** Super Market Billing System *****
+                ***** Sammy's Super Market *****
 
-Customer Name: Pooja
-Contact Number: 7545126535
+                 ***Invoice***
+
+
+Customer Name: Akanksha
+Contact Number:
+8645721212
 Item Name           Rate      Quantity  Amount
-aggie               14        5         70
-iscuits             30        2         60
-andwash             150       1         150
-loor Cleaner        140       1         140
-aggery              200       1         200
 hips                40        2         80
+iscuits             30        2         60
+offee               40        1         40
 
-                Total Number of Items: 6
+                Total Number of Items: 3
 
-                Total Bill: 629
+                Total Bill: 161
 
                 Thanks For Shopping!
 
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 3
+
+        Modify Bill Menu:
+        1. Add Item.
+        2. Remove Item.
+        3. Exit.
+        Enter Choice: 1
+        Enter Item Name: Milk
+        Enter Rate Of Item: 24
+        Enter Quantity Of Item: 1
+        Item Added Successfully
+        Welcome To Sammy's Super Market
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -332,34 +259,7 @@ hips                40        2         80
         Enter Choice: 2
         Enter Item Name to remove: Chips
         Item Removed Successfully
-        Welcome To Super Market Billing System
-        **************************************
-                1. Add Item.
-                2. Print Bill.
-                3. Modify Bill.
-                4. Exit.
-                Enter Choice: 2
-
-
-                ***** Super Market Billing System *****
-
-Customer Name: Pooja
-Contact Number: 7545126535
-Item Name           Rate      Quantity  Amount
-aggie               14        5         70
-iscuits             30        2         60
-andwash             150       1         150
-loor Cleaner        140       1         140
-aggery              200       1         200
-hips                40        2         80
-
-                Total Number of Items: 6
-
-                Total Bill: 629
-
-                Thanks For Shopping!
-
-        Welcome To Super Market Billing System
+        Welcome To Sammy's Super Market
         **************************************
                 1. Add Item.
                 2. Print Bill.
@@ -368,6 +268,177 @@ hips                40        2         80
                 Enter Choice: 4
         Good Luck!
 Do you want to continue Billing? (yes/no): yes
-Are you shopping for the first time? (yes/no): yes
-Enter Customer Name: XYZ
-Enter Contact Number: 
+Are you shopping for the first time? (yes/no): no
+Enter Customer Name: Radhika
+Enter Contact Number: 7845123265
+        Welcome To Sammy's Super Market 
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 1
+        Enter Item Name: Sugar
+        Enter Rate Of Item: 55
+        Enter Quantity Of Item: 2
+        Item Added Successfully
+        Welcome To Sammy's Super Market
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 2
+
+
+                ***** Sammy's Super Market *****
+
+                 ***Invoice***
+
+
+Customer Name: Radhika
+Contact Number:
+7845123265
+Item Name           Rate      Quantity  Amount
+ugar                55        2         110
+
+                Total Number of Items: 1
+
+                Total Bill: 98
+
+                Thanks For Shopping!
+
+        Welcome To Sammy's Super Market
+        **************************************
+                1. Add Item.
+                2. Print Bill.
+                3. Modify Bill.
+                4. Exit.
+                Enter Choice: 4
+        Good Luck!
+Do you want to continue Billing? (yes/no): no
+Do you want to continue? (yes/no): yes
+Are you a Billing Manager or Sales Manager? (billing/sales): sales
+Enter Sales Manager Name: Gauri
+Enter Sales Manager ID: 2
+
+Sammy's Store : Sales Manager Menu:
+1. Add Item to Store.
+2. Remove Item from Store.
+3. Display all Items in Store.
+4. Search an Item in Store.
+5. Exit.
+Enter Choice: 1
+        Enter Item Name: Pasta
+        Enter Quantity Of Item: 400
+        Item Added to Store Successfully
+
+Sammy's Store : Sales Manager Menu:
+1. Add Item to Store.
+2. Remove Item from Store.
+3. Display all Items in Store.
+4. Search an Item in Store.
+5. Exit.
+Enter Choice: 1
+        Enter Item Name: Oil
+        Enter Quantity Of Item: 400
+        Item Added to Store Successfully
+
+Sammy's Store : Sales Manager Menu:
+1. Add Item to Store.
+2. Remove Item from Store.
+3. Display all Items in Store.
+4. Search an Item in Store.
+5. Exit.
+Enter Choice: 1
+        Enter Item Name: Sugar
+        Enter Quantity Of Item: 700
+        Item Added to Store Successfully
+
+Sammy's Store : Sales Manager Menu:
+1. Add Item to Store.
+2. Remove Item from Store.
+3. Display all Items in Store.
+4. Search an Item in Store.
+5. Exit.
+Enter Choice: 1
+        Enter Item Name: Rice
+        Enter Quantity Of Item: 800
+        Item Added to Store Successfully
+
+Sammy's Store : Sales Manager Menu:
+1. Add Item to Store.
+2. Remove Item from Store.
+3. Display all Items in Store.
+4. Search an Item in Store.
+5. Exit.
+Enter Choice: 1
+        Enter Item Name: Soap
+        Enter Quantity Of Item: 1000
+        Item Added to Store Successfully
+
+Sammy's Store : Sales Manager Menu:
+1. Add Item to Store.
+2. Remove Item from Store.
+3. Display all Items in Store.
+4. Search an Item in Store.
+5. Exit.
+Enter Choice: 3
+
+                ***** Items in Store *****
+
+        Item Name: Pasta, Quantity: 400
+        Item Name: Oil, Quantity: 400
+        Item Name: Sugar, Quantity: 700
+        Item Name: Rice, Quantity: 800
+        Item Name: Soap, Quantity: 1000
+
+                End of Store Items
+
+
+Sammy's Store : Sales Manager Menu:
+1. Add Item to Store.
+2. Remove Item from Store.
+3. Display all Items in Store.
+4. Search an Item in Store.
+5. Exit.
+Enter Choice: 2
+        Enter Item Name to remove: Oil
+        Item Removed from Store Successfully
+
+Sammy's Store : Sales Manager Menu:
+1. Add Item to Store.
+2. Remove Item from Store.
+3. Display all Items in Store.
+4. Search an Item in Store.
+5. Exit.
+Enter Choice: 3
+
+                ***** Items in Store *****
+
+        Item Name: Pasta, Quantity: 400
+        Item Name: Sugar, Quantity: 700
+        Item Name: Rice, Quantity: 800
+        Item Name: Soap, Quantity: 1000
+
+                End of Store Items
+
+
+Sammy's Store : Sales Manager Menu:
+1. Add Item to Store.
+2. Remove Item from Store.
+3. Display all Items in Store.
+4. Search an Item in Store.
+5. Exit.
+Enter Choice: 4
+        Enter Item Name to search: Pasta
+        Item Found in Store, Quantity: 400
+
+Sammy's Store : Sales Manager Menu:
+1. Add Item to Store.
+2. Remove Item from Store.
+3. Display all Items in Store.
+4. Search an Item in Store.
+5. Exit.
+Enter Choice: 5
+Do you want to continue? (yes/no): no
