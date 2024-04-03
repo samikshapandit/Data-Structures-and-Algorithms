@@ -86,9 +86,10 @@ public:
     }
 
     void printBill() const {
-        std::cout << "\n\n\t\t***** Super Market Billing System *****\n\n";
+        std::cout << "\n\n\t\t***** Sammy's Super Market *****\n\n";
+        std::cout << "\t\t ***Invoice***\n\n "<< std::endl;
         std::cout << "Customer Name: " << customerName << std::endl;
-        std::cout << "Contact Number: " << contactNumber << std::endl;
+        std::cout << "Contact Number: \n" << contactNumber << std::endl;
         std::cout << std::setw(20) << std::left << "Item Name"
                   << std::setw(10) << std::left << "Rate"
                   << std::setw(10) << std::left << "Quantity"
@@ -109,7 +110,7 @@ public:
     }
 };
 
-void addItem(Bill &bill) {
+    void addItem(Bill &bill) {
     std::string itemName;
     int rate, quantity;
     std::cout << "\tEnter Item Name: ";
@@ -126,29 +127,22 @@ void addItem(Bill &bill) {
     BillItem item(itemName, rate, quantity);
     bill.addItem(item);
 
-    std::ofstream out("Bill.txt", std::ios::app);
-    if (out.is_open()) {
-        out << itemName << " : " << rate << " : " << quantity << std::endl;
-        out.close();
-    } else {
-        std::cerr << "\tError: File Can't Open!" << std::endl;
-    }
+    // Writing item details to file (if needed)...
     std::cout << "\tItem Added Successfully" << std::endl;
 }
 
+// Function to modify the bill
+    void modifyBill(Bill &bill) {
+        std::cout << "\n\tModify Bill Menu:" << std::endl;
+        std::cout << "\t1. Add Item." << std::endl;
+        std::cout << "\t2. Remove Item." << std::endl;
+        std::cout << "\t3. Exit." << std::endl;
+        std::cout << "\tEnter Choice: ";
 
+        int choice;
+        std::cin >> choice;
+        std::cin.ignore(); // Clear input buffer
 
-void modifyBill(Bill &bill) {
-    std::cout << "\n\tModify Bill Menu:" << std::endl;
-    std::cout << "\t1. Add Item." << std::endl;
-    std::cout << "\t2. Remove Item." << std::endl;
-    std::cout << "\t3. Exit." << std::endl;
-    std::cout << "\tEnter Choice: ";
-    
-    int choice;
-    std::cin >> choice;
-    std::cin.ignore(); // Clear input buffer
-    
     switch (choice) {
         case 1:
             addItem(bill);
@@ -156,7 +150,8 @@ void modifyBill(Bill &bill) {
         case 2: {
             std::string itemName;
             std::cout << "\tEnter Item Name to remove: ";
-            std::cin >> itemName;
+            std::cin.ignore(); // Clear input buffer
+            std::getline(std::cin, itemName);
             bill.removeItem(itemName);
             std::cout << "\tItem Removed Successfully" << std::endl;
             break;
@@ -169,18 +164,111 @@ void modifyBill(Bill &bill) {
     }
 }
 
-void printMainMenu() {
-    std::cout << "\tWelcome To Super Market Billing System" << std::endl;
-    std::cout << "\t**************************************" << std::endl;
-    std::cout << "\t\t1. Add Item." << std::endl;
-    std::cout << "\t\t2. Print Bill." << std::endl;
-    std::cout << "\t\t3. Modify Bill." << std::endl;
-    std::cout << "\t\t4. Exit." << std::endl;
-    std::cout << "\t\tEnter Choice: ";
+// Function to print the main menu
+    void printMainMenu() {
+        std::cout << "\tWelcome To Sammy's Super Market " << std::endl;
+        std::cout << "\t**************************************" << std::endl;
+        std::cout << "\t\t1. Add Item." << std::endl;
+        std::cout << "\t\t2. Print Bill." << std::endl;
+        std::cout << "\t\t3. Modify Bill." << std::endl;
+        std::cout << "\t\t4. Exit." << std::endl;
+        std::cout << "\t\tEnter Choice: ";
 }
 
+
+class SalesManager {
+private:
+    std::string name;
+    int id;
+    std::vector<std::pair<std::string, int>> storeItems; // {item name, quantity}
+
+public:
+    SalesManager(const std::string& n, int i) : name(n), id(i) {}
+
+    void addItemToStore() {
+        std::string itemName;
+        int quantity;
+        std::cout << "\tEnter Item Name: ";
+        std::cin.ignore(); // Clear input buffer
+        std::getline(std::cin, itemName);
+        std::cout << "\tEnter Quantity Of Item: ";
+        std::cin >> quantity;
+
+        storeItems.push_back(std::make_pair(itemName, quantity));
+        std::cout << "\tItem Added to Store Successfully" << std::endl;
+    }
+
+    void removeItemFromStore() {
+        std::string itemName;
+        std::cout << "\tEnter Item Name to remove: ";
+        std::cin.ignore(); // Clear input buffer
+        std::getline(std::cin, itemName);
+
+        auto it = std::find_if(storeItems.begin(), storeItems.end(), [&](const std::pair<std::string, int>& item) {
+            return item.first == itemName;
+        });
+
+        if (it != storeItems.end()) {
+            storeItems.erase(it);
+            std::cout << "\tItem Removed from Store Successfully" << std::endl;
+        } else {
+            std::cout << "\tItem not found in Store" << std::endl;
+        }
+    }
+
+    void displayAllItems() {
+        std::cout << "\n\t\t***** Items in Store *****\n\n";
+        for (const auto& item : storeItems) {
+            std::cout << "\tItem Name: " << item.first << ", Quantity: " << item.second << std::endl;
+        }
+        std::cout << "\n\t\tEnd of Store Items\n\n";
+    }
+
+    void searchItemInStore() {
+        std::string itemName;
+        std::cout << "\tEnter Item Name to search: ";
+        std::cin.ignore(); // Clear input buffer
+        std::getline(std::cin, itemName);
+
+        auto it = std::find_if(storeItems.begin(), storeItems.end(), [&](const std::pair<std::string, int>& item) {
+            return item.first == itemName;
+        });
+
+        if (it != storeItems.end()) {
+            std::cout << "\tItem Found in Store, Quantity: " << it->second << std::endl;
+        } else {
+            std::cout << "\tItem not found in Store" << std::endl;
+        }
+    }
+
+    void printManagerInfo() const {
+        std::cout << "\tSales Manager Name: " << name << std::endl;
+        std::cout << "\tSales Manager ID: " << id << std::endl;
+    }
+};
+
 int main() {
-    bool continueShopping = true;
+    std::string managerType;
+    bool continueProgram = true;
+
+    while (continueProgram) {
+        std::cout << "Are you a Billing Manager or Sales Manager? (billing/sales): ";
+        std::cin >> managerType;
+
+        if (managerType == "billing") {
+            // Billing Manager
+            std::cout << "Enter Billing Manager Name: ";
+            std::string billingManagerName;
+            std::cin >> billingManagerName;
+
+            std::cout << "Enter Billing Manager ID: ";
+            int billingManagerID;
+            std::cin >> billingManagerID;
+
+            std::cout << "Billing Manager Name: " << billingManagerName << std::endl;
+            std::cout << "Billing Manager ID: " << billingManagerID << std::endl;
+
+            bool continueShopping = true;
 
     while (continueShopping) {
         Bill bill;
@@ -236,6 +324,65 @@ int main() {
         std::cin >> response;
         if (response != "yes")
             continueShopping = false;
+    }
+
+        } else if (managerType == "sales") {
+            // Sales Manager
+            std::cout << "Enter Sales Manager Name: ";
+            std::string salesManagerName;
+            std::cin >> salesManagerName;
+
+            std::cout << "Enter Sales Manager ID: ";
+            int salesManagerID;
+            std::cin >> salesManagerID;
+
+            SalesManager salesManager(salesManagerName, salesManagerID);
+
+            bool continueSales = true;
+            while (continueSales) {
+                std::cout << "\nSammy's Store : Sales Manager Menu:" << std::endl;
+                std::cout << "1. Add Item to Store." << std::endl;
+                std::cout << "2. Remove Item from Store." << std::endl;
+                std::cout << "3. Display all Items in Store." << std::endl;
+                std::cout << "4. Search an Item in Store." << std::endl;
+                std::cout << "5. Exit." << std::endl;
+                std::cout << "Enter Choice: ";
+
+                int choice;
+                std::cin >> choice;
+
+                switch (choice) {
+                    case 1:
+                        salesManager.addItemToStore();
+                        break;
+                    case 2:
+                        salesManager.removeItemFromStore();
+                        break;
+                    case 3:
+                        salesManager.displayAllItems();
+                        break;
+                    case 4:
+                        salesManager.searchItemInStore();
+                        break;
+                    case 5:
+                        continueSales = false;
+                        break;
+                    default:
+                        std::cout << "Invalid Choice! Please choose again." << std::endl;
+                }
+            }
+        } else {
+            std::cout << "Invalid Choice!" << std::endl;
+        }
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        // Ask if the user wants to continue
+        std::cout << "Do you want to continue? (yes/no): ";
+        std::string response;
+        std::cin >> response;
+        if (response != "yes")
+            continueProgram = false;
     }
 
     return 0;
